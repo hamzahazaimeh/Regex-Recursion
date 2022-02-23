@@ -1,8 +1,10 @@
 /* Write a function to do the division operation without using the built-in division*/
 
 function division(number, dividedBy){
-    // Write you logic here.
-    return;
+    if (number === 0 || number < dividedBy || dividedBy === 0) return 0;
+    if (number === dividedBy) return 1;
+    if (dividedBy === 1) return number;
+    return 1 + division(number - dividedBy, dividedBy);
 }
 
 /* Write a function that implement Math.pow(x,n) but using recursion
@@ -12,12 +14,9 @@ pow(2,4) = 16
 
 
 function pow(x,n){
-    if (number>=dividedBy && number>0 && dividedBy >0) {
-        return 1+ division(number-dividedBy,dividedBy);    
-        } 
-        else {
-            return 0;
-        } 
+    if (n === 0) return 1;
+    if (n === 1) return x;
+    return x * pow(x, n - 1);
     
 }
 
@@ -31,8 +30,8 @@ Write a function that take n as parameter and return the nth element in the Fibo
 Example: n = 4 ==> 3, n= 0 ==> 0, n = 3 ==> 2 */
 
 function fibonacci(n){
-    // Write you logic here.
-    return;
+    if (n === 1 || n === 0) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 /* Optional 
